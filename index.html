@@ -3,92 +3,107 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Kyle Looker</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-		<nav role="navigation">
-		Kyle Looker
-		  <ul class="links">
+	<nav role="navigation">
+		<ul class="nav-links">
 			<li><a class="link">Projects</a></li>
 			<li><a class="link">Github</a></li>
 			<li><a class="link">Linkedin</a></li>
-		  </ul>
-		</nav>
-		<main role="main">
-			<header role="banner">
-				<h1>Hi, I’m Kyle. I build things, break them, and put them back together again.</h1>
+		</ul>
+	</nav>
+	<main role="main">
+		<header role="banner">
+			<h1 class="hello-world">
+				Hi, I’m Kyle. I build things, break them, and put them back together.
+			</h1>
+		</header>
+
+		<section>
+			<div class="about-me lines">
 				<h2>About Me</h2>
-				<img src="https://via.placeholder.com/350x150">
+				<img src="photos/me.jpeg" alt="image of me">
 				<p>
-				  I’m a former applied scientist who chose to pursue web development thanks in large part to a passion for getting frustrated.  
+					I’m an applied scientist who chose to pursue web development thanks to a passion for frustration.  
 				</p>
-			</header>
-	
-			<section>
-				Section 1
-				<h2 class="project-name">FlashQuiz</h2>
-				<p>
-					Build a deck of custom flash cards or sample what the community has built without the overly busy styling featured on other free study sites.
-					 The mobile first design and monochromatic theam were chosen to help me focus during the train commute to my former job.
-				  </p>
-				<img src="https://via.placeholder.com/350x150">
-				<a href="http://www.looreddy.com" class="live-site-link">http://www.looreddy.com</a>
-				<a href="" class="github-link">github</a>
-				<h3>built With:</h3>
-				<ul class="languages">
-					<li class="language">React</li>
-					<li class="language">Redux</li>
-					<li class="language">Node</li>
-					<li class="language">MongoDB</li>
-					<li class="language">Passport-JWT</li>
-					<li class="language">Enzyme</li>
-					<li class="language">Mocha</li>
-				</ul>
-			</section>
-	
-			<section>
-				Section 2
-				<h2 class="project-name">Wedding Gift-Exchange</h2>
-				<p>
-					A small gift exchange app built to help break the ice at my wedding.
-					 As people are coming from many different countries and cultures the app randomly matches people who agree to take part in the gift exchange.
-					</p>
-				<img src="https://via.placeholder.com/350x150">
-				<a href=" https://wedding-gift-exchange.herokuapp.com/" class="live-site-link">Wedding-gift-exchange</a>
-				<a href="" class="github-link">github</a>
-				<h3>built With:</h3>
-				<ul class="languages">
-					<li class="language">JavaScript</li>
-					<li class="language">jQuery</li>
-					<li class="language">Node</li>
-					<li class="language">MongoDB</li>
-					<li class="language">Passport</li>
-					<li class="language">Mocha</li>
-				</ul>
-			</section>
-	
-			<section>
-				Section 3
-				<h2 class="project-name">Wedding Event Guide</h2>
-				<p>
-					Weddings can be a logistical nightmare and if you wedding is a several day multiple location affair people will get the details confused.
-					 Faced with this problem I built an event guid for my wedding that sorts information by day giving location, time, event details, weather and directions.
-					</p>
-				<img src="https://via.placeholder.com/350x150">
-				<a href="https://complicationlamp.github.io/wedding-events/." class="live-site-link">Wedding Event Guide</a>
-				<a href="" class="github-link">github</a>
-				<h3>built With:</h3>
-				<ul class="languages">
-					<li class="language">JavaScript</li>
-					<li class="language">jQuery</li>
-					<li class="language">AJAX</li>
-					<li class="language">Google Maps API</li>
-					<li class="language">OpenWeatherMap API</li>
-				</ul>
-			</section>
-		</main>
-		<footer role="content-info">Footer</footer>
+			</div>
+		</section>
+
+		<section class="project">
+			<h2 class="project-name">FlashQuiz</h2>
+			<p>
+				Build a deck of flash cards or use what the community built without the busy styling featured on other study apps.
+					The mobile first design and monochromatic theam were chosen to help me focus during my train commute.
+				</p>
+			<img src="photos/profileFlashQuiz.jpg" alt="flashQuiz profile view">
+			<h3>Built With</h3>
+			<ul class="languages">
+				<li class="language">React</li>
+				<li class="language">Redux</li>
+				<li class="language">Node</li>
+				<li class="language">MongoDB</li>
+				<li class="language">Passport-JWT</li>
+				<li class="language">Enzyme</li>
+				<li class="language">Mocha</li>
+			</ul>
+			<a 
+				href="http://www.looreddy.com" 
+				class="live-site-link">
+				<i class="fas fa-external-link-square-alt"></i>
+				Go to live site
+			</a>
+			<a 
+				href="" 
+				class="github-link">
+				<i class="fas fa-external-link-square-alt"></i>
+				github
+			</a>
+		</section>
+		<section>
+			Section 2
+			<h2 class="project-name">Wedding Gift-Exchange</h2>
+			<p>
+				A small gift exchange app built to help break the ice at my wedding.
+					As people are coming from many different countries and cultures the app randomly matches people who agree to take part in the gift exchange.
+				</p>
+			<img src="https://via.placeholder.com/350x150">
+			<a href=" https://wedding-gift-exchange.herokuapp.com/" class="live-site-link">Wedding-gift-exchange</a>
+			<a href="" class="github-link">github</a>
+			<h3>Built With</h3>
+			<ul class="languages">
+				<li class="language">JavaScript</li>
+				<li class="language">jQuery</li>
+				<li class="language">Node</li>
+				<li class="language">MongoDB</li>
+				<li class="language">Passport</li>
+				<li class="language">Mocha</li>
+			</ul>
+		</section>
+		<section>
+			Section 3
+			<h2 class="project-name">Wedding Event Guide</h2>
+			<p>
+				Weddings can be a logistical nightmare and if you wedding is a several day multiple location affair people will get the details confused.
+					Faced with this problem I built an event guid for my wedding that sorts information by day giving location, time, event details, weather and directions.
+				</p>
+			<img src="https://via.placeholder.com/350x150">
+			<a href="https://complicationlamp.github.io/wedding-events/." class="live-site-link">Wedding Event Guide</a>
+			<a href="" class="github-link">github</a>
+			<h3>Built With</h3>
+			<ul class="languages">
+				<li class="language">JavaScript</li>
+				<li class="language">jQuery</li>
+				<li class="language">AJAX</li>
+				<li class="language">Google Maps API</li>
+				<li class="language">OpenWeatherMap API</li>
+			</ul>
+		</section>
+	</main>
+	<footer role="content-info">Have you noticed how large sites make footers?</footer>
 </body>
 </html>

@@ -3,41 +3,101 @@
   }
   
   body {
-	font-family: "Open Sans",
+	font-family: "Poppins",
 	sans-serif; 
 	font-size: 20px;
 	color: #444;
 	text-align: center;
 	line-height: 1.5;
   }
-  
-  nav,
+	
+	/* ////////////////////nav styling/////////////////// */
+	
+	nav,
   footer {
 	padding: 1% 0;
-	background-color: #aaa;
   }
   
   nav {
-	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 10;
-  }
-  
-  
-  
-  header {
+	}
+	
+	.nav-links{
+		list-style-type: none;
+		text-align: right;
+		padding-right: 10px;;
+	}
+	
+	/* //////////////////////section styling//////////////// */
+	
+	header {
 	padding: 12% 0;
-  }
+	}
+
+	.hello-world{
+		/* border: solid blue 1px; */
+		margin-top:3em;
+	}
+
+	.about-me{
+		/* border: solid blue 1px; */
+	}
   
   section {
 	min-height: 200px;
 	padding: 6% 0;
-	background-color: #bbb;
-  }
-  
-  section:nth-child(even) {
-	background-color: #ddd;
-  }
-  
+	}
+
+	/* ////////////////Project Styling ////////////// */
+	
+	.project{
+		border: solid blue 1px;
+	}
+
+	.languages{
+		list-style-type: none;
+	}
+
+	.live-site-link, .github-link{
+		border: dashed teal 1px;
+		padding: .5em;
+		text-align: center;
+		text-decoration: none;
+	}
+	
+		/* ////////////////Media queries ////////////// */
+
+
+	@media only screen and (min-width: 320px) {
+		nav{
+			position: absolute;
+		}
+
+		section {
+			margin: 18% 0;
+		}
+
+		img{
+			width: 100%;
+		}
+	
+		/* .intro {
+			font-size: 36px;
+		}*/
+	
+		.language {
+			text-align: left;
+			margin-inline-start: 4em;
+		}
+	/*
+		.profile-img {
+			width: 260px;
+		}
+	
+		.bio, .capstone {
+			padding-bottom: 100px;
+		} */
+	}
