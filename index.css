@@ -35,8 +35,13 @@
 		text-decoration: none;
 	}
 
+	.link{
+		color: black;
+	}
+
 	footer{
-		background: rgb(211, 177, 211);
+		background:black;
+		color: white;
 	}
 	
 	/* //////////////////////section styling//////////////// */
@@ -90,25 +95,44 @@
 			/* border: solid 1px blue; */
 		}
 		.nav-links{
-			text-align: left;
-			padding-inline-start: 1em;
+			/* text-align: right; */
+
+			/* padding-inline-start: 1em; */
 		}
 		.link{
-			display: inline;
-			float: left;
-			width: 33.33%; 
+			/* display: inline; */
+			float: right;
+			padding: .2em
+			/* width: 33.33%;  */
 		}
 
 		section {
 			margin: 18% 0;
 		}
 
-		img{
+		.profilePic, .projectImg{
 			width: 100%;
 		}
 	
 		.language {
 			text-align: left;
 			margin-inline-start: 4em;
+		}
+	}
+
+	@media only screen and (min-width: 400px){
+		footer{
+			color: aqua;
+		}
+		.languages, .language {
+			padding-left: 0px;
+			margin-left: 0px;
+			text-align: center;
+		}
+	}
+
+	@media only screen and (min-width: 480px){
+		.profilePic{
+			max-width: 464px;
 		}
 	}
