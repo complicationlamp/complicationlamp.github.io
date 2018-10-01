@@ -19,10 +19,12 @@
 	/* ////////////////////nav styling/////////////////// */
 	
   nav {
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 10;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background: black;
+		padding-bottom: .5em;
 	}
 	
 	.nav-links{
@@ -35,8 +37,9 @@
 		text-decoration: none;
 	}
 
-	.link{
-		color: black;
+	.nav-link-github, .nav-link-projects, .nav-link-linkedin, .footerText{
+		color: aquamarine;
+		text-shadow: 5px 1px 9px #f226d2;
 	}
 
 	footer{
@@ -47,7 +50,7 @@
 	/* //////////////////////section styling//////////////// */
 	
 	header {
-	padding: 12% 0;
+	padding-top: 12%;
 	/* border: solid 1px purple; */
 	}
 
@@ -62,7 +65,12 @@
   
   section {
 	min-height: 200px;
-	padding: 6% 0;
+	/* padding: 6% 0; */
+	}
+
+	.projectDetails, .meDetails{
+		max-width: 850px;
+		display: inline-flex;
 	}
 
 	/* ////////////////Project Styling ////////////// */
@@ -87,7 +95,11 @@
 	}
 	
 		/* ////////////////Media queries ////////////// */
-
+	@media only screen and (max-width: 320px){
+		.profilePic, .projectImg{
+			width: 100%;
+		}
+	}
 
 	@media only screen and (min-width: 320px) {
 		nav{
@@ -102,7 +114,7 @@
 		.link{
 			/* display: inline; */
 			float: right;
-			padding: .2em
+			padding: .2em;
 			/* width: 33.33%;  */
 		}
 
@@ -124,6 +136,12 @@
 		footer{
 			color: aqua;
 		}
+		section{
+			margin: 50px 0;
+		}
+		li.link{
+			margin-left: 2%;
+		}
 		.languages, .language {
 			padding-left: 0px;
 			margin-left: 0px;
@@ -135,4 +153,24 @@
 		.profilePic{
 			max-width: 464px;
 		}
+
+		.projectImg{
+			max-width: 800px;
+		}
+
+		section {
+			min-height: 200px;
+			padding: 3% 0;
+			}
 	}
+
+	@media only screen and (min-width: 800px){
+		.hello-world{
+			margin-top: .8em;
+			font-size: 2.5em;
+		}
+
+		header{
+			padding-top: 5em;
+		}
+	}	
