@@ -27,24 +27,25 @@
 		padding-bottom: .5em;
 	}
 	
-	.nav-links{
+	.nav-links:focus{
 		list-style-type: none;
 		text-align: right;
 		padding-right: 10px;
 	}
 	
-	.nav-live-link{ 
-		text-decoration: none;
-	}
-
-	.nav-link-github, .nav-link-projects, .nav-link-linkedin, .footerText{
+	.nav-live-link, footer{ 
 		color: aquamarine;
 		text-shadow: 5px 1px 9px #f226d2;
+		-webkit-transition-duration: .8s;
+		transition-duration: .8s;
 	}
+	.nav-live-link:hover{
+		color:red;
+	}
+
 
 	footer{
 		background:black;
-		color: white;
 	}
 	
 	/* //////////////////////section styling//////////////// */
@@ -59,7 +60,9 @@
 		margin-top:3em;
 	}
 
-	.about-me{
+	.profilePic{
+		border-radius: 2em;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		/* border: solid blue 1px; */
 	}
   
@@ -74,24 +77,31 @@
 	}
 
 	/* ////////////////Project Styling ////////////// */
-	
-	.project{
-		/* border: solid blue 1px; */
-	}
+
 
 	.giftex-img, .eventGuide-img, .flashQuiz-img{
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border-radius: 1em;
 	}
 
 	.languages{
 		list-style-type: none;
 	}
 
-	.live-site-link, .github-link{
+	.projBtn{
 		/* border: dashed teal 1px; */
 		padding: .5em;
 		text-align: center;
 		text-decoration: none;
+		margin-left: .2em;
+		border-radius: 1em;
+	}
+
+	.projBtn:hover{
+		-webkit-transition-duration: .8s;
+		transition-duration: .8s;
+		background: black;
+		color: white;
 	}
 	
 		/* ////////////////Media queries ////////////// */
@@ -107,7 +117,7 @@
 			/* border: solid 1px blue; */
 		}
 		.nav-links{
-			/* text-align: right; */
+			list-style-type: none;
 
 			/* padding-inline-start: 1em; */
 		}
@@ -133,9 +143,6 @@
 	}
 
 	@media only screen and (min-width: 400px){
-		footer{
-			color: aqua;
-		}
 		section{
 			margin: 50px 0;
 		}
@@ -146,6 +153,9 @@
 			padding-left: 0px;
 			margin-left: 0px;
 			text-align: center;
+		}
+		nav{
+			padding-right: 2em;
 		}
 	}
 
