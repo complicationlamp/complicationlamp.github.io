@@ -88,16 +88,17 @@
 		list-style-type: none;
 	}
 
-	.projBtn{
+	.projBtn, .resume-btn{
 		/* border: dashed teal 1px; */
 		padding: .5em;
 		text-align: center;
 		text-decoration: none;
 		margin-left: .2em;
 		border-radius: 1em;
+		color: rgb(117, 11, 117);
 	}
 
-	.projBtn:hover{
+	.projBtn:hover, .resume-btn:hover{
 		-webkit-transition-duration: .8s;
 		transition-duration: .8s;
 		background: black;
@@ -125,6 +126,7 @@
 			/* display: inline; */
 			float: right;
 			padding: .2em;
+			font-size: 80%;
 			/* width: 33.33%;  */
 		}
 
@@ -148,6 +150,7 @@
 		}
 		li.link{
 			margin-left: 2%;
+			font-size: 85%;
 		}
 		.languages, .language {
 			padding-left: 0px;
@@ -168,6 +171,9 @@
 			max-width: 800px;
 		}
 
+		li.link{
+			font-size: 100%;
+		}
 		section {
 			min-height: 200px;
 			padding: 3% 0;
