@@ -13,7 +13,8 @@
 	}
 	/* moved this into main so nav and foooter stretch to the edges */
 	main{
-		margin:8px;
+		margin:auto;
+		max-width: 1000px;
 	}
 	
 	/* ////////////////////nav styling/////////////////// */
@@ -190,3 +191,8 @@
 			padding-top: 5em;
 		}
 	}	
+	@media only screen and (min-width: 1500px){
+		.nav-links:focus{
+			text-align: center;
+		}
+	}
