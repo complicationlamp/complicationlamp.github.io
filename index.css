@@ -80,7 +80,7 @@
 	/* ////////////////Project Styling ////////////// */
 
 
-	.giftex-img, .eventGuide-img, .flashQuiz-img{
+	.giftex-img, .flashQuiz-img{
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		border-radius: 1em;
 	}
@@ -104,6 +104,20 @@
 		transition-duration: .8s;
 		background: black;
 		color: white;
+	}
+
+	.photos{
+		/* border: #f226d2 solid 1px; */
+		width: 100%;
+	}
+
+	.iphone{
+		max-height: 400px;
+		margin-bottom: 1.5em;
+		
+	}
+	.laptop{
+		width: 75%;
 	}
 	
 		/* ////////////////Media queries ////////////// */
