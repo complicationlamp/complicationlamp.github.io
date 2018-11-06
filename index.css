@@ -26,11 +26,28 @@
 		right: 0;
 		z-index: 10;
 		background: black;
-		padding-bottom: .5em;
+		/* padding-bottom: .5em; */
 		position: fixed;
 		border-bottom: mediumvioletred 4px solid;
 	}
-	
+	.profilePic{
+		float: left;
+		height: 90px;
+		width: 90px;
+		margin-right: 10px;
+		-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);
+		clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);		
+	}
+	h1{
+		text-align: left;
+		float: left;
+		/* height: 100%; */
+		font-size: 40px;
+		margin-bottom: 0px;
+		margin-top: 0px;
+		margin-left: 10px;
+		color: #f5f5f5;
+	}
 	.nav-links:focus{
 		list-style-type: none;
 		text-align: right;
@@ -38,15 +55,14 @@
 	}
 	
 	.nav-live-link, footer{ 
-		color: aquamarine;
-		text-shadow: 5px 1px 9px #f226d2;
+		color: #f5f5f5;
 		-webkit-transition-duration: .8s;
 		transition-duration: .8s;
 	}
 	.nav-live-link:hover{
 		color:red;
+		text-shadow: 5px 1px 9px #f226d2;
 	}
-
 
 	footer{
 		background:black;
@@ -61,18 +77,12 @@
 
 	.hello-world{
 		/* border: solid blue 1px; */
-		margin-top:0em;
-		font-size: 3em;
-		text-shadow: 6px 4px #d3dedc;
+		/* margin-top:0em; */
+		/* font-size: 3em; */
+		/* text-shadow: 6px 4px #d3dedc; */
 	}
 	.whatIdo{
 		font-size:2em;
-	}
-
-	.profilePic{
-		border-radius: 2em;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		/* border: solid blue 1px; */
 	}
   
   section {
@@ -87,9 +97,9 @@
 
 	/* ////////////////Project Styling ////////////// */
 
-	.language-container{
+	/* .language-container{
 		background:#1ecdc30d;
-	}
+	} */
 	.language{
 		list-style-type: none;
 	}
@@ -132,8 +142,13 @@
 	
 		/* ////////////////Media queries ////////////// */
 	@media only screen and (max-width: 320px){
-		.profilePic, .projectImg{
+		.projectImg{
 			width: 100%;
+		}
+		.profilePic,h1{
+			height: 0px;
+			margin: 0px;
+			font-size: 0px;
 		}
 	}
 
@@ -142,6 +157,14 @@
 			list-style-type: none;
 
 			/* padding-inline-start: 1em; */
+		}
+		section#projects {
+			margin-top: 30px;
+		}
+		.profilePic,h1{
+			height: 0px;
+			margin: 0px;
+			font-size: 0px;
 		}
 		.link{
 			/* display: inline; */
@@ -155,7 +178,7 @@
 			margin: 18% 0;
 		}
 
-		.profilePic, .projectImg{
+		.projectImg{
 			width: 100%;
 		}
 	
@@ -169,9 +192,12 @@
 		section{
 			margin: 50px 0;
 		}
+		section#projects {
+			margin-top: 20px;
+		}
 		li.link{
 			margin-left: 2%;
-			font-size: 85%;
+			font-size: 79%;
 		}
 		.languages, .language {
 			padding-left: 0px;
@@ -184,14 +210,12 @@
 	}
 
 	@media only screen and (min-width: 480px){
-		.profilePic{
-			max-width: 464px;
+		section#projects {
+			margin-top: -10px;
 		}
-
 		.projectImg{
 			max-width: 800px;
 		}
-
 		li.link{
 			font-size: 100%;
 		}
@@ -200,9 +224,36 @@
 			padding: 3% 0;
 			}
 	}
+	@media only screen and (min-width: 530px){
+		section#projects {
+			margin-top: -30px;
+		}
+	}
+	@media only screen and (min-width:600px){
+		.profilePic{
+			float: left;
+			height: 90px;
+			width: 90px;
+			margin-right: 10px;
+			-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);
+			clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);		
+		}	
+	}
 
 	@media only screen and (min-width: 800px){
-
+		section#projects {
+			margin-top: -70px;
+		}
+		h1{
+			text-align: left;
+			float: left;
+			/* height: 100%; */
+			font-size: 40px;
+			margin-bottom: 0px;
+			margin-top: 0px;
+			margin-left: 10px;
+			color: #f5f5f5;
+		}
 		header{
 			padding-top: 5em;
 		}
