@@ -10,9 +10,27 @@
 		<!-- icon credit due to <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 	<title>Kyle Looker</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script>
+	function makeItBad() {
+		console.log("button clicked");
+		const element = document.getElementById("navigation");
+		element.classList.toggle("mystyle");
+	}
+	</script>
+	<style>
+		.mystyle {
+			width: 100%;
+			padding: 25px;
+			background-color:#30fa09;
+			color: white;
+			font-family: "comic sans";
+			font-size: 25px;
+			box-sizing: border-box;
+		}
+	</style>
 </head>
 <body>
-	<nav role="navigation">
+	<nav role="navigation" id="navigation">
 		<img class="profilePic" src="photos/kyle.jpg" alt="image of me"><br/>
 		<h1 class="hello-world">
 				Hi, I’m Kyle.
@@ -28,6 +46,10 @@
 		<p class="whatIdo">
 	</header>
 	<main role="main">
+		<section>
+				<button onclick="makeItBad()">Make this horrible</button>
+				
+		</section>
 		<section id="projects" class="project">
 			<h2 class="project-name">FlashQuiz</h2>
 			<div class ="projectDetails">
