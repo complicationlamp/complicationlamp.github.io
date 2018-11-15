@@ -48,18 +48,22 @@
 		margin-left: 10px;
 		color: #f5f5f5;
 	}
+	.retroBtn{
+		background: black;
+		border: none;
+	}
 	.nav-links:focus{
 		list-style-type: none;
 		text-align: right;
 		padding-right: 10px;
 	}
 	
-	.nav-live-link, footer{ 
+	.nav-live-link, .fa-bomb, footer{ 
 		color: #f5f5f5;
 		-webkit-transition-duration: .8s;
 		transition-duration: .8s;
 	}
-	.nav-live-link:hover{
+	.nav-live-link:hover, .fa-bomb:hover{
 		color:red;
 		text-shadow: 5px 1px 9px #f226d2;
 	}

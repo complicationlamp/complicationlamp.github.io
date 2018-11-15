@@ -3,36 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Kumar+One+Outline" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins|Press+Start+2P" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="icon" type="image/png" href="photos/child.png">
 		<!-- icon credit due to <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 	<title>Kyle Looker</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
+		
 	function makeItBad() {
-		console.log("button clicked");
-		const badNav = document.getElementById("navigation",);
-		badNav.classList.toggle("badNav-style");
-		const badBody = document.getElementById("body");
-		badBody.classList.toggle("badBody-style");
-		function hideImage(){
-        	document.getElementById('laptop-flashQuiz-img').style.visibility=hidden;
-    	}
+		swal({
+			title: "Are you sure?",
+			text: "Warning: clicking ok displays viloently bright colors and pretty much makes the site bad/awsome!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+			})
+			.then((willDelete) => {
+				if (willDelete) {
+					console.log("ok clicked");
+					const badNav = document.getElementById("navigation");
+					badNav.classList.toggle("badNav-style");
+					const badBody = document.getElementById("body");
+					badBody.classList.toggle("badBody-style");
+					function hideImage(){
+						document.getElementById('laptop-flashQuiz-img').style.visibility="hidden";
+					}
+				} else {
+					swal("Your eye's are safe!");
+				}
+			});
 	}
 	</script>
 	<style>
 		.badNav-style {
-			width: 100%;
-			padding: 25px;
-			background-color:#30fa09;
-			color: black;
-			font-family: 'Kumar One Outline';
-
-			font-size: 25px;
-			box-sizing: border-box;
+			background-color:black;
+			font-family: 'Press Start 2P';
 		}
 		.badBody-style{
 			background: url(photos/pizza.jpg)
@@ -43,7 +51,7 @@
 	<nav role="navigation" id="navigation">
 		<img class="profilePic" src="photos/kyle.jpg" alt="image of me"><br/>
 		<h1 class="hello-world">
-				Hi, I’m Kyle.<button onclick="makeItBad()">THE BAD SITE BTN   <i class="fa fa-4x fa-bomb" aria-hidden="true"></i></button>
+				Hi, I’m Kyle.<button onclick="makeItBad()" class="retroBtn"><i class="fa fa-4x fa-bomb" aria-hidden="true"></i></button>
 		</h1>
 		<!-- thi is the button that toggles the terrible skin onto my sight -->
 		
