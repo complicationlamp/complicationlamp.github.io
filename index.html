@@ -3,49 +3,68 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Poppins|Press+Start+2P|Creepster|Ceviche+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins|Press+Start+2P|Creepster|Ceviche+One|Ultra" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="icon" type="image/png" href="photos/child.png">
 		<!-- icon credit due to <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 	<title>Kyle Looker</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- jquary for btn function and sweetalert for warning -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
-		
-	function makeItBad() {
-		swal({
-			title: "Are you sure?",
-			text: "Warning: clicking ok displays violently bright colors and pretty much makes the site bad/awesome!",
-			icon: "warning",
-			buttons: true,
-			dangerMode: true,
-			})
-			.then((willDelete) => {
-				if (willDelete) {
-					// changes the navigation bar styling
-					const badNav = document.getElementById("navigation");
-					badNav.classList.toggle("badNav-style");
-					// changes the body styling
-					const badBody = document.getElementById("body");
-					badBody.classList.toggle("badBody-style");
-					const badCopy = document.getElementById("projects");
-					badCopy.classList.toggle("badCopy-style");
-					//change titles
-					const badProjTitleFQ = document.getElementById("project-name-FlashQuiz");
-					const badProjTitleWGE = document.getElementById("project-name-WedGifEx");
-					const badProjTitleWG = document.getElementById("project-name-wedGuide");
-					badProjTitleWGE.classList.toggle("badProjTitle");
-					badProjTitleWG.classList.toggle("badProjTitle"); 
-					badProjTitleFQ.classList.toggle("badProjTitle");
-					function hideImage(){
-						document.getElementById('laptop-flashQuiz-img').style.visibility="hidden";
-					}
-				} else {
-					swal("Your eye's are safe!");
-				}
-			});
-	}
+		let isBad = false;
+		const toggleBadSkin = function(){
+			// changes the navigation bar styling
+			const badNav = document.getElementById("navigation");
+			badNav.classList.toggle("badNav-style");
+			// changes the body styling
+			const badBody = document.getElementById("body");
+			badBody.classList.toggle("badBody-style");
+			//change project titles
+			const badProjTitleFQ = document.getElementById("project-name-FlashQuiz");
+			const badProjTitleWGE = document.getElementById("project-name-WedGifEx");
+			const badProjTitleWG = document.getElementById("project-name-wedGuide");
+			badProjTitleWGE.classList.toggle("badProjTitle");
+			badProjTitleWG.classList.toggle("badProjTitle"); 
+			badProjTitleFQ.classList.toggle("badProjTitle");
+			// change project copy
+			const badCopyFQ = document.getElementById("projects-FQ");
+			const badCopyWGE = document.getElementById("projects-WGE");
+			const badCopyEG= document.getElementById("projects-EG");
+			badCopyFQ.classList.toggle("badCopy-style");
+			badCopyWGE.classList.toggle("badCopy-style");
+			badCopyEG.classList.toggle("badCopy-style");
+			//change the about me
+			const badAbout = document.getElementById("about-me");
+			badAbout.classList.toggle("badAboutMe-style");
+		}
+		function makeItBad() {
+			console.log("outside alert", isBad)
+			if(isBad === false){
+				swal({
+					title: "Are you sure?",
+					text: "Warning: clicking ok displays violently bright colors and pretty much makes the site bad/awesome!",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+					})
+					.then((goToSkin) => {
+						if (goToSkin) {
+							isBad = true;
+							console.log("inside alert", isBad)
+							toggleBadSkin();
+						} else {
+							isBad = false;
+							swal("Your eye's are safe!");
+						}
+					});
+			} else {
+				isBad=false;
+				toggleBadSkin();
+			}
+		}
 	</script>
 	<style>
 		.badNav-style {
@@ -54,15 +73,21 @@
 		}
 		.badBody-style{
 			background: url(photos/pizza.jpg);
-		}
-		.badCopy-style{
-			font-family: 'Ceviche One', cursive;
-			font-size: 1.5em;
+			background-position: center; /* Center the image */
+ 			background-repeat: repeat; /* Do not repeat the image */
+  			/* background-size: cover; Resize the background image to cover the entire container */
 		}
 		.badProjTitle{
 			font-family: 'Creepster', cursive;
 			font-size: 3em;
     		text-shadow: 5px 2px chartreuse;
+		}
+		.badCopy-style{
+			font-family: 'Ceviche One', cursive;
+			font-size: 1.5em;
+		}
+		.badAboutMe-style{
+			font-family: 'Ultra', serif;
 		}
 	</style>
 </head>
@@ -70,7 +95,7 @@
 	<nav role="navigation" id="navigation">
 		<img class="profilePic" src="photos/kyle.jpg" alt="image of me"><br/>
 		<h1 class="hello-world">
-				Hi, I’m Kyle.<button onclick="makeItBad()" class="retroBtn"><i class="fa fa-4x fa-bomb" aria-hidden="true"></i></button>
+				Hi, I’m Kyle.
 		</h1>
 		<!-- thi is the button that toggles the terrible skin onto my sight -->
 		
@@ -82,10 +107,10 @@
 		</ul>
 	</nav>
 	<header role="banner">
-		<p class="whatIdo">
+		<button onclick="makeItBad()" class="retroBtn"><i class="fa fa-4x fa-bomb" aria-hidden="true"> You won't click this button </i></button>
 	</header>
 	<main role="main">
-		<section id="projects" class="project">
+		<section id="projects-FQ" class="project">
 			<h2 class="project-name" id="project-name-FlashQuiz">FlashQuiz</h2>
 			<div class ="projectDetails">
 				<p role="complementary">
@@ -129,7 +154,7 @@
 			</a>
 		</section>
 
-		<section class="project">
+		<section class="project" id="projects-WGE">
 			<h2 class="project-name" id="project-name-WedGifEx">Wedding Gift-Exchange</h2>
 			<div class ="projectDetails">
 				<p role="complementary">
@@ -166,7 +191,7 @@
 			</a>
 		</section>
 
-		<section class="project">
+		<section class="project" id="projects-EG">
 			<h2 class="project-name" id="project-name-wedGuide">Wedding Event Guide</h2>
 			<div class ="projectDetails">
 				<p role="complementary">
