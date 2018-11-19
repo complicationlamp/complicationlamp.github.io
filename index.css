@@ -12,11 +12,6 @@
 	line-height: 1.5;
 	margin:0em;
 	}
-	/* moved this into main so nav and foooter stretch to the edges */
-	main{
-		margin:auto;
-		max-width: 1000px;
-	}
 	
 	/* ////////////////////nav styling/////////////////// */
 	
@@ -38,6 +33,36 @@
 		-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);
 		clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);		
 	}
+	#badSkinBtn{
+		width: 20vw;
+		height: 6vw;
+		position: absolute;
+		left: 50vw;
+		top: 50vh;
+		transform: translate(-50%,-80%);
+		font-family: 'Varela Round', sans-serif;
+		font-size: 2vw;
+		letter-spacing: 0.1em;
+		color: #e8e8e8;
+		border: none;
+		border-radius: 10px;
+		outline: none;
+		background: linear-gradient(45deg,#d350db,teal,#d350db);
+		background-size: 400% 400%;
+		/* box-shadow: 1vw 1vw 0 lightcoral; */
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+		#badSkinBtn:hover {
+			animation: gradient 10s ease infinite;
+			font-size: 2.05vw;
+			box-shadow: 0.2vw 0.2vw 0 mediumvioletred;
+		}
+	@keyframes gradient {
+		50% {
+			background-position: 100% 0;
+		}
+	}
 	h1{
 		text-align: left;
 		float: left;
@@ -49,8 +74,9 @@
 		color: #f5f5f5;
 	}
 	.retroBtn{
-		background: black;
-		border: none;
+		background: #f5f5f5;
+		border: #f226d2 solid 3px;
+		border-radius: .2em;
 	}
 	.nav-links:focus{
 		list-style-type: none;
@@ -58,12 +84,12 @@
 		padding-right: 10px;
 	}
 	
-	.nav-live-link, .fa-bomb, footer{ 
+	.nav-live-link, footer{ 
 		color: #f5f5f5;
 		-webkit-transition-duration: .8s;
 		transition-duration: .8s;
 	}
-	.nav-live-link:hover, .fa-bomb:hover{
+	.nav-live-link:hover{
 		color:red;
 		text-shadow: 5px 1px 9px #f226d2;
 	}
@@ -162,6 +188,10 @@
 
 			/* padding-inline-start: 1em; */
 		}
+		main{
+			margin:25% auto;
+			max-width: 1000px;
+		}
 		section#projects {
 			margin-top: 30px;
 		}
@@ -177,9 +207,8 @@
 			font-size: 80%;
 			/* width: 33.33%;  */
 		}
-
-		section {
-			margin: 18% 0;
+		#badSkinBtn{
+			top: 15vh;
 		}
 
 		.projectImg{
@@ -193,9 +222,10 @@
 	}
 
 	@media only screen and (min-width: 400px){
-		section{
-			margin: 50px 0;
+		#badSkinBtn{
+			top: 15%;
 		}
+
 		section#projects {
 			margin-top: 20px;
 		}
@@ -214,6 +244,9 @@
 	}
 
 	@media only screen and (min-width: 480px){
+		#badSkinBtn{
+			top: 20%;
+		}
 		section#projects {
 			margin-top: -10px;
 		}
@@ -232,8 +265,12 @@
 		section#projects {
 			margin-top: -30px;
 		}
+		main{
+			margin:20% auto;
+		}
 	}
 	@media only screen and (min-width:600px){
+
 		.profilePic{
 			float: left;
 			height: 90px;
@@ -241,10 +278,17 @@
 			margin-right: 10px;
 			-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);
 			clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 47%, 0% 0%);		
-		}	
+		}
+
+		main{
+			margin:15% auto;
+		}
 	}
 
 	@media only screen and (min-width: 800px){
+		main{
+			margin:10% auto;
+		}
 		section#projects {
 			margin-top: -70px;
 		}
@@ -262,6 +306,12 @@
 			padding-top: 5em;
 		}
 	}	
+	@media only screen and (min-width: 1000px){
+
+		#badSkinBtn{
+			top: 25%;
+		}
+	}
 	@media only screen and (min-width: 1500px){
 		.nav-links:focus{
 			text-align: center;
