@@ -3,21 +3,103 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins|Press+Start+2P|Creepster|Ceviche+One|Ultra" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="icon" type="image/png" href="photos/child.png">
 		<!-- icon credit due to <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
 	<title>Kyle Looker</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- jquary for btn function and sweetalert for warning -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script>
+		let isBad = false;
+		const toggleBadSkin = function(){
+			// changes the navigation bar styling
+			const badNav = document.getElementById("navigation");
+			badNav.classList.toggle("badNav-style");
+			// changes the body styling
+			const badBody = document.getElementById("body");
+			badBody.classList.toggle("badBody-style");
+			//change project titles
+			const badProjTitleFQ = document.getElementById("project-name-FlashQuiz");
+			const badProjTitleWGE = document.getElementById("project-name-WedGifEx");
+			const badProjTitleWG = document.getElementById("project-name-wedGuide");
+			badProjTitleWGE.classList.toggle("badProjTitle");
+			badProjTitleWG.classList.toggle("badProjTitle"); 
+			badProjTitleFQ.classList.toggle("badProjTitle");
+			// change project copy
+			const badCopyFQ = document.getElementById("projects-FQ");
+			const badCopyWGE = document.getElementById("projects-WGE");
+			const badCopyEG= document.getElementById("projects-EG");
+			badCopyFQ.classList.toggle("badCopy-style");
+			badCopyWGE.classList.toggle("badCopy-style");
+			badCopyEG.classList.toggle("badCopy-style");
+			//change the about me
+			const badAbout = document.getElementById("about-me");
+			badAbout.classList.toggle("badAboutMe-style");
+		}
+		function makeItBad() {
+			console.log("outside alert", isBad)
+			if(isBad === false){
+				swal({
+					title: "Are you sure?",
+					text: "Warning: clicking ok displays violently bright colors and pretty much makes the site bad/awesome!",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+					})
+					.then((goToSkin) => {
+						if (goToSkin) {
+							isBad = true;
+							console.log("inside alert", isBad)
+							toggleBadSkin();
+						} else {
+							isBad = false;
+							swal("Your eye's are safe!");
+						}
+					});
+			} else {
+				isBad=false;
+				toggleBadSkin();
+			}
+		}
+	</script>
+	<style>
+		.badNav-style {
+			background-color:black;
+			font-family: 'Press Start 2P';
+		}
+		.badBody-style{
+			background: url(photos/pizza.jpg);
+			background-position: center; /* Center the image */
+ 			background-repeat: repeat; /* Do not repeat the image */
+  			/* background-size: cover; Resize the background image to cover the entire container */
+		}
+		.badProjTitle{
+			font-family: 'Creepster', cursive;
+			font-size: 3em;
+    		text-shadow: 5px 2px chartreuse;
+		}
+		.badCopy-style{
+			font-family: 'Ceviche One', cursive;
+			font-size: 1.5em;
+		}
+		.badAboutMe-style{
+			font-family: 'Ultra', serif;
+		}
+	</style>
 </head>
-<body>
-	<nav role="navigation">
+<body id="body">
+	<nav role="navigation" id="navigation">
 		<img class="profilePic" src="photos/kyle.jpg" alt="image of me"><br/>
 		<h1 class="hello-world">
 				Hi, I’m Kyle.
-			</h1>
-		<ul class="nav-links">
+		</h1>
+		<!-- thi is the button that toggles the terrible skin onto my sight -->
+		
+		<ul class="nav-links" id="nav-links">
 			<li class="link"><a class="nav-live-link nav-link-github" href="https://github.com/complicationlamp" >GitHub</a></li>
 			<li class="link"><a class="nav-live-link nav-link-linkedin" href="https://www.linkedin.com/in/kyle-looker-12267323/">Linkedin</a></li>
 			<li class="link"><a class="nav-live-link nav-link-github" href="/photos/kyleLookerResume.pdf" >Resume</a></li>
@@ -25,11 +107,14 @@
 		</ul>
 	</nav>
 	<header role="banner">
-		<p class="whatIdo">
+		<button onclick="makeItBad()" class="retroBtn" id="badSkinBtn">
+			<!-- <i class="fa fa-4x fa-bomb" aria-hidden="true"></i> -->
+			You won't click this button 
+		</button>
 	</header>
 	<main role="main">
-		<section id="projects" class="project">
-			<h2 class="project-name">FlashQuiz</h2>
+		<section id="projects-FQ" class="project">
+			<h2 class="project-name" id="project-name-FlashQuiz">FlashQuiz</h2>
 			<div class ="projectDetails">
 				<p role="complementary">
 					Build a deck of flash cards or use what the community built without the busy styling featured on other study apps.
@@ -37,7 +122,7 @@
 				</p>
 			</div>
 			<div class="photos">
-				<img class="laptop flashQuiz-img" src="photos/flashQuizHome.png" alt="flashQuiz home view">
+				<img class="laptop flashQuiz-img" id="laptop-flashQuiz-img"src="photos/flashQuizHome.png" alt="flashQuiz home view">
 				<img class="iphone iphone-flashquiz" src="photos/flashQuizIphone.png" alt="mobile-view-flashquiz">
 			</div>
 			<div class="language-container">
@@ -72,8 +157,8 @@
 			</a>
 		</section>
 
-		<section class="project">
-			<h2 class="project-name">Wedding Gift-Exchange</h2>
+		<section class="project" id="projects-WGE">
+			<h2 class="project-name" id="project-name-WedGifEx">Wedding Gift-Exchange</h2>
 			<div class ="projectDetails">
 				<p role="complementary">
 					A small gift exchange app built to help break the ice at my wedding.
@@ -109,8 +194,8 @@
 			</a>
 		</section>
 
-		<section class="project">
-			<h2 class="project-name">Wedding Event Guide</h2>
+		<section class="project" id="projects-EG">
+			<h2 class="project-name" id="project-name-wedGuide">Wedding Event Guide</h2>
 			<div class ="projectDetails">
 				<p role="complementary">
 					Weddings can be a logistical nightmare and if you wedding is a several day multiple location affair people will get the details confused.
@@ -163,6 +248,6 @@
 				</div>
 		</section>
 	</main>
-	<footer role="contentinfo" class="footerText">Have you noticed how many sites have huge footers?</footer>
+	<footer role="contentinfo" id="footer" class="footerText">Have you noticed how many sites have huge footers?</footer>
 </body>
 </html>
